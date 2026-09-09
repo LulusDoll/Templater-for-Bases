@@ -8,6 +8,8 @@ buttons in the Base's own toolbar — without touching your existing notes.
 
 ## What it does
 
+https://github.com/user-attachments/assets/b9693112-92c5-455a-9ae2-263db184a7ae
+
 - Adds a gear and a "+" button to the toolbar of any open Base.
 <img width="970" height="222" alt="image" src="https://github.com/user-attachments/assets/77a8efcf-ba67-4648-a78e-f4700b3409b3" />
 
