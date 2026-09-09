@@ -37,8 +37,16 @@ https://github.com/user-attachments/assets/b9693112-92c5-455a-9ae2-263db184a7ae
 - Desktop only for now (mobile's Bases toolbar layout hasn't been verified against this plugin).
 
 ## Installation
+No official Community Plugins listing yet. 
 
-No official Community Plugins listing yet. Install manually:
+## Using BRAT (Recommended)
+Install the BRAT plugin
+Open BRAT settings in Obsidian
+Click "Add Beta Plugin"
+Enter: LulusDoll/Templater-for-Bases
+Enable the plugin in Settings → Community Plugins
+
+## Install manually:
 
 1. Download `main.js`, `manifest.json`, and `styles.css` from a release.
 2. Create `<your vault>/.obsidian/plugins/templater-for-bases/` and put the three files there.
