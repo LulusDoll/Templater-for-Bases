@@ -1,4 +1,5 @@
-# Templater-for-Bases
+*[English](./README.md)*
+
 Plugin for Obsidian
 # Templater for Bases
 
