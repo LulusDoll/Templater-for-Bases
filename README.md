@@ -1,70 +1,63 @@
-# Templater-for-Bases
-Plugin for Obsidian
 # Templater for Bases
 
-Закрепляет шаблон [Templater](https://github.com/SilentVoid13/Templater) за конкретным
-представлением Obsidian [Base](https://help.obsidian.md/bases) и создаёт по нему новые заметки
-через две небольшие кнопки прямо в тулбаре базы — не трогая уже существующие заметки.
+*[Русский](./README.ru.md)*
 
-## Что делает
+Pin a [Templater](https://github.com/SilentVoid13/Templater) template to a specific view of an
+Obsidian [Base](https://help.obsidian.md/bases), and create new notes from it with two small
+buttons in the Base's own toolbar — without touching your existing notes.
 
-- Добавляет шестерёнку и кнопку «+» в тулбар любой открытой базы.
-- **Шестерёнка**: закрепляет шаблон Templater за тем представлением, которое сейчас открыто.
-- **+**: создаёт новую заметку по шаблону, закреплённому за этим представлением.
-  - Если для конкретного представления шаблон ещё не задан, плагин берёт шаблон с любого
-    другого представления той же базы и закрепляет его уже персонально за этим (дальше они
-    независимы — изменение одного не меняет другое).
-  - Самый первый закреплённый в базе шаблон сразу копируется на все представления, которые уже
-    есть у этой базы — если тебе нужен один шаблон на всю базу, достаточно одного клика.
-- После создания заметки плагин читает фильтры активного представления (из `.base` файла) и,
-  по возможности, дописывает то, что шаблон сам не задал: подходящие свойства, теги/алиасы,
-  нужный префикс имени и целевую папку — чтобы новая заметка сразу попадала в отфильтрованную
-  таблицу, а не пропадала из виду.
-- Работает и с базой, вставленной в текст заметки (`![[Название.base]]`), не только с базой,
-  открытой как отдельная вкладка.
+## What it does
 
-## Требования
+- Adds a gear and a "+" button to the toolbar of any open Base.
+- **Gear**: pin a Templater template to the view you're currently looking at.
+- **+**: create a new note from that view's pinned template.
+  - If this specific view has no template of its own yet, it borrows the template from any
+    other view of the same Base and pins it here too (from then on the two are independent —
+    changing one doesn't change the other).
+  - The very first template you pin in a Base is copied to every view that Base already has —
+    so if you only ever want one template for the whole Base, one click is all it takes.
+- After creating a note, the plugin reads the active view's filters (`.base` file) and — on a
+  best-effort basis — fills in whatever the template didn't already set: matching properties,
+  tags/aliases, required name prefix, and target folder — so the new note actually shows up in
+  the filtered table instead of vanishing from view.
+- Works with a Base embedded in a note (`![[Something.base]]`), not just a Base opened as its
+  own tab.
 
-- Должен быть установлен и включён Templater — плагин создаёт заметки через его собственный
-  механизм создания, а не заново реализует обработку шаблонов.
-- Obsidian с Bases (входит в ядро начиная с версии 1.9+).
-- Пока только десктоп (вёрстка тулбара Bases на мобильных устройствах с этим плагином не
-  проверялась).
+## Requirements
 
-## Установка
+- Templater must be installed and enabled — this plugin creates notes through Templater's own
+  note-creation routine, it doesn't reimplement template processing.
+- Obsidian with Bases (a core feature since Obsidian 1.9+).
+- Desktop only for now (mobile's Bases toolbar layout hasn't been verified against this plugin).
 
-Пока нет в официальном каталоге Community Plugins. Ставится вручную:
+## Installation
 
-1. Скачай `main.js`, `manifest.json` и `styles.css` из релиза.
-2. Создай папку `<твой vault>/.obsidian/plugins/templater-for-bases/` и положи туда эти
-   три файла.
-3. Перезагрузи Obsidian и включи **Templater for Bases** в Settings → Community plugins.
+No official Community Plugins listing yet. Install manually:
 
+1. Download `main.js`, `manifest.json`, and `styles.css` from a release.
+2. Create `<your vault>/.obsidian/plugins/templater-for-bases/` and put the three files there.
+3. Reload Obsidian, then enable **Templater for Bases** in Settings → Community plugins.
 
-## Настройки
+## Settings
 
-- **Язык интерфейса** — русский, английский или китайский. Влияет только на уведомления и
-  текст настроек этого плагина.
-- **Где открывать новую заметку** — новая вкладка, сплит или текущая вкладка (заменяет базу,
-  как это делает родная кнопка «+ New»).
-- **Очистить осиротевшие привязки** — убирает привязки, указывающие на `.base` файлы, которых
-  больше не существует (например, удалённые вне Obsidian). Трогает только собственные
-  настройки этого плагина — никогда не заметку и не `.base` файл.
+- **Interface language** — Russian, English, or Chinese. Only affects this plugin's own
+  notices and settings text.
+- **Where to open new notes** — new tab, split, or the current tab (replacing the Base, like
+  Obsidian's native "+ New" button does).
+- **Clean up orphaned pins** — removes pins pointing at `.base` files that no longer exist
+  (e.g. deleted outside Obsidian). Only touches this plugin's own stored settings — never a
+  note, never a `.base` file.
 
-## Безопасность данных
+## Data safety
 
-Любая запись, которую делает этот плагин, относится ровно к одному из этих случаев:
+Every write this plugin makes falls into exactly one of these:
 
-- Собственные данные плагина (какой шаблон за чем закреплён) — никогда не содержимое vault.
-- **Новый** файл, созданный через официальный механизм создания самого Templater.
-- Дозаполнение *незаданных* полей frontmatter, либо добавление элементов в список
-  (теги/алиасы) поверх того, что уже задал шаблон, — и только у этой же только что созданной
-  заметки; то, что шаблон задал сам, никогда не перезаписывается.
-- Переименование или перемещение этой же только что созданной заметки, если того требует
-  фильтр — никогда уже существующей.
+- Its own plugin data (which template is pinned where) — never your vault content.
+- A **new** file created through Templater's own official creation routine.
+- Filling in *unset* frontmatter fields, or adding list items (tags/aliases) on top of what
+  the template already set, on that same brand-new note — never overwriting what the template
+  put there on purpose.
+- Renaming or moving that same brand-new note, if a filter needs it — never a pre-existing one.
 
-Плагин никогда не изменяет, не переименовывает и не удаляет существующую заметку, и никогда не
-пишет в сам `.base` файл (только читает его — чтобы узнать текущие фильтры и имена
-представлений).
-
-
+It never modifies, renames, or deletes an existing note, and never writes to the `.base` file
+itself (only reads it, to know the current filters and view names).
