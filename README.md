@@ -9,7 +9,11 @@ buttons in the Base's own toolbar — without touching your existing notes.
 ## What it does
 
 - Adds a gear and a "+" button to the toolbar of any open Base.
+<img width="970" height="222" alt="image" src="https://github.com/user-attachments/assets/77a8efcf-ba67-4648-a78e-f4700b3409b3" />
+
 - **Gear**: pin a Templater template to the view you're currently looking at.
+<img width="803" height="234" alt="image" src="https://github.com/user-attachments/assets/e5d93477-7ed9-44c6-899d-50d3957ee511" />
+
 - **+**: create a new note from that view's pinned template.
   - If this specific view has no template of its own yet, it borrows the template from any
     other view of the same Base and pins it here too (from then on the two are independent —
