@@ -1,4 +1,4 @@
-# Templater for Bases
+# Templater for Bases (Plugin for Obsidian)
 
 *[Русский](./README.ru.md)*
 
