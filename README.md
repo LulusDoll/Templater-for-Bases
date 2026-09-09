@@ -40,14 +40,14 @@ https://github.com/user-attachments/assets/b9693112-92c5-455a-9ae2-263db184a7ae
 No official Community Plugins listing yet. 
 
 ## Using BRAT (Recommended)
+
 Install the BRAT plugin
-Open BRAT settings in Obsidian
-Click "Add Beta Plugin"
-Enter: LulusDoll/Templater-for-Bases
-Enable the plugin in Settings → Community Plugins
+1. Open BRAT settings in Obsidian
+2. Click "Add Beta Plugin"
+3. Enter: LulusDoll/Templater-for-Bases
+4. Enable the plugin in Settings → Community Plugins
 
 ## Install manually:
-
 1. Download `main.js`, `manifest.json`, and `styles.css` from a release.
 2. Create `<your vault>/.obsidian/plugins/templater-for-bases/` and put the three files there.
 3. Reload Obsidian, then enable **Templater for Bases** in Settings → Community plugins.
