@@ -1,7 +1,5 @@
+# Templater for Bases (Plugin for Obsidian)
 *[English](./README.md)*
-
-Plugin for Obsidian
-# Templater for Bases
 
 Закрепляет шаблон [Templater](https://github.com/SilentVoid13/Templater) за конкретным
 представлением Obsidian [Base](https://help.obsidian.md/bases) и создаёт по нему новые заметки
